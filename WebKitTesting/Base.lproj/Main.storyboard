@@ -14,13 +14,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npM-TX-DKk">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moh-av-GXE">
+                                <rect key="frame" x="303" y="20" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="svf-M9-Pbj"/>
+                                </constraints>
+                                <state key="normal" title="Forward"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fs-GS-azd">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="K5G-4A-px3"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="npM-TX-DKk" secondAttribute="bottom" id="0Rx-XE-ssD"/>
+                            <constraint firstItem="moh-av-GXE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9UW-9q-e2a"/>
+                            <constraint firstItem="npM-TX-DKk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="Eji-Jh-p1f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="npM-TX-DKk" secondAttribute="trailing" id="Lxp-sK-QVe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="moh-av-GXE" secondAttribute="trailing" constant="16" id="Qd9-6Q-anx"/>
+                            <constraint firstItem="npM-TX-DKk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bsV-c2-dBw"/>
+                            <constraint firstItem="7Fs-GS-azd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ley-aE-iBf"/>
+                            <constraint firstItem="7Fs-GS-azd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wyQ-UE-VzR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="7Fs-GS-azd" id="KRZ-rY-60D"/>
+                        <outlet property="forwardButton" destination="moh-av-GXE" id="Na8-17-u3v"/>
+                        <outlet property="webView" destination="npM-TX-DKk" id="vi7-FE-AhV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="122"/>
+            <point key="canvasLocation" x="138.40000000000001" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>
