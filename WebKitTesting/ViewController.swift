@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var backButton: UIButton!
@@ -20,7 +20,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the delegates
         urlTextField.delegate = self
+        webView.navigationDelegate = self
         
     }
     
@@ -57,6 +59,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+    
+    //MARK: - Back Button Action
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        
+        // If true allow the user to use the back button
+        // to navigate back
+        if webView.canGoBack {
+            webView.goBack()
+        }
+        
+    }
+    
+    
+    //MARK: - Forward Button Action
+    
+    @IBAction func forwardButtonTapped(_ sender: UIButton) {
+        
+        // If true allow the user to use the forward button
+        // to navigate forward
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
+    //MARK: - WKNavigationDelegate Methods
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        // Allows the back button to be enable if the user wants to go back to the previous page.
+        backButton.isEnabled = webView.canGoBack
+        
+        // Allows the forward button to be enable if the user wants to go forward to the previous page
+        forwardButton.isEnabled = webView.canGoForward
+        
+        urlTextField.text = webView.url?.absoluteString
+        
     }
 
 

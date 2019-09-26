@@ -29,6 +29,9 @@
                                     <constraint firstAttribute="width" constant="56" id="svf-M9-Pbj"/>
                                 </constraints>
                                 <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="forwardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIP-Ne-6ju"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMI-oJ-3pY">
                                 <rect key="frame" x="58" y="20" width="237" height="34"/>
@@ -44,6 +47,9 @@
                                     <constraint firstAttribute="width" constant="34" id="K5G-4A-px3"/>
                                 </constraints>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ram-a5-Qy3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
